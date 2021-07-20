@@ -425,6 +425,8 @@
                   type="tel"
                   name="phone"
                   id="callback_form-phone"
+                  pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
+                  title="Разрешен ввод номера белорусских форматов"
                   required
                   placeholder="Ваш номер телефона..."
                 />
@@ -506,6 +508,8 @@
                       name="phone"
                       id="callback_footer_form-phone"
                       required=""
+                      pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
+                      title="Разрешен ввод номера белорусских форматов"
                       placeholder="Ваш номер телефона..."
                     />
                   </p>
@@ -587,12 +591,14 @@
         <div class="form-content">
           <form name="callback-form" id="form1" action="#" method="post">
             <h4>Обратный звонок</h4>
-            <input type="hidden" name="form_name" value=" Обратный звонок" />
+            <input type="hidden" value=" Обратный звонок" />
             <!--  <input type="hidden" name="club" value="<?=$_GET['club-name']?>"> -->
             <p class="input-text">
               <input
                 name="name"
                 type="text"
+                pattern="[а-яА-ЯёЁ ]+"
+                title="Разрешен ввод кирилицы и пробелов"
                 required
                 placeholder="Ваше имя..."
               />
@@ -602,6 +608,8 @@
                 type="tel"
                 name="phone"
                 id="callback_form1-phone"
+                pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
+                title="Разрешен ввод номера белорусских форматов"
                 required
                 placeholder="Ваш номер телефона..."
               />
@@ -627,15 +635,13 @@
         <div class="form-content">
           <form name="free-visit-form" id="form2" action="#" method="post">
             <h4>Записаться на визит</h4>
-            <input
-              type="hidden"
-              name="form_name"
-              value=" Записаться на визит"
-            />
+            <input type="hidden" value=" Записаться на визит" />
             <p class="input-text">
               <input
                 name="name"
                 type="text"
+                pattern="[а-яА-ЯёЁ ]+"
+                title="Разрешен ввод кирилицы и пробелов"
                 required
                 placeholder="Ваше имя..."
               />
@@ -645,6 +651,8 @@
                 type="tel"
                 name="phone"
                 id="callback_form2-phone"
+                pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
+                title="Разрешен ввод номера белорусских форматов"
                 required
                 placeholder="Ваш номер телефона..."
               />
