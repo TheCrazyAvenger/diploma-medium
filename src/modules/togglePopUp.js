@@ -30,10 +30,12 @@ const togglePopUp = () => {
     })
   );
 
-  gift.addEventListener('click', (e) => {
-    popUps[3].classList.toggle('visible');
-    gift.style.display = 'none';
-  });
+  if (gift) {
+    gift.addEventListener('click', (e) => {
+      popUps[3].classList.toggle('visible');
+      gift.style.display = 'none';
+    });
+  }
 };
 
 export default togglePopUp;
