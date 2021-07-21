@@ -1790,6 +1790,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   bottom: 10px;
   right: 10px;
   z-index: 200;
+  transform: translateY(45px);
   font-size: 28px;
   color: #1e1c34;
   display: block;
@@ -1798,6 +1799,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   background-color: #ffd11a;
   text-align: center;
   border-radius: 50%;
+  transition: transform 0.15s linear;
 }
 .popup {
   display: none;
