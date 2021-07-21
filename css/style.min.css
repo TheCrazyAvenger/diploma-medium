@@ -718,7 +718,7 @@ html#schelkovo .advantages .wrapper {
   position: fixed;
   z-index: 5555;
   display: inline;
-  top: 15px;
+  top: 85px;
   right: 20px;
   cursor: pointer;
 }
@@ -962,7 +962,7 @@ header .head .call .btn {
   margin-left: 22px;
 }
 header nav.top-menu {
-  z-index: 4444;
+  z-index: 6666;
   top: 0;
   left: 0;
   width: 100%;
@@ -1044,7 +1044,8 @@ header .top-menu ul li:last-child:after {
   display: none;
 }
 nav.popup-menu {
-  display: none;
+  display: flex;
+  transform: translateX(100%);
   flex-direction: column;
   position: fixed;
   background-color: #000;
@@ -1061,6 +1062,7 @@ nav.popup-menu {
   z-index: 6666;
   left: 0;
   top: 0;
+  transition: transform 0.3s linear;
 }
 nav.popup-menu ul {
   margin: auto;
@@ -1790,6 +1792,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   bottom: 10px;
   right: 10px;
   z-index: 200;
+  transform: translateY(45px);
   font-size: 28px;
   color: #1e1c34;
   display: block;
@@ -1798,6 +1801,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   background-color: #ffd11a;
   text-align: center;
   border-radius: 50%;
+  transition: transform 0.15s linear;
 }
 .popup {
   display: none;
