@@ -41,18 +41,20 @@ const calc = () => {
     });
   };
 
-  form.addEventListener('input', (e) => {
-    const target = e.target;
-    if (target.matches('[data-price]')) {
-      checkClub(target.value);
-    }
-    if (target.matches('[data-club]')) {
-      checkPriceValues();
-    }
-    if (promo.value === 'ТЕЛО2019') {
-      checkPriceValues(0.7);
-    }
-  });
+  if (clubs.length > 0) {
+    form.addEventListener('input', (e) => {
+      const target = e.target;
+      if (target.matches('[data-price]')) {
+        checkClub(target.value);
+      }
+      if (target.matches('[data-club]')) {
+        checkPriceValues();
+      }
+      if (promo.value === 'ТЕЛО2019') {
+        checkPriceValues(0.7);
+      }
+    });
+  }
 };
 
 export default calc;

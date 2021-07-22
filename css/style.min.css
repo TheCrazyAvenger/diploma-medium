@@ -1259,14 +1259,22 @@ nav.popup-menu .close-menu-btn img {
   max-height: 541px;
 }
 .main-slider .slide {
-  position: relative;
+  position: absolute;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  opacity: 0;
+  transition: opacity 0.21s linear;
   height: 100%;
+}
+@media (max-width: 991px) {
+  .main-slider .slide {
+    left: 50%;
+    width: 95%;
+    transform: translateX(-50%);
+  }
 }
 .main-slider .slide .slide-text {
   position: relative;
@@ -1841,7 +1849,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1020;
+  z-index: 6667;
 }
 .popup .form-wrapper {
   text-align: center;
@@ -1850,7 +1858,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   top: 20vh;
   right: 0;
-  z-index: 1200;
+  z-index: 6668;
   width: 380px;
   height: 355px;
 }
@@ -2227,24 +2235,30 @@ p.personal-data input[type='checkbox']:checked + label:before {
   .main-slider .slide .slide-text .offer-head,
   .main-slider .slide.type2 .slide-text .offer-head {
     background: transparent;
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
   }
   .main-slider .slide .slide-text .offer-head .top,
   .main-slider .slide.type2 .slide-text .offer-head .top {
-    font-size: 27px;
+    font-size: 20px;
     line-height: 30px;
   }
   .main-slider .slide .slide-text .offer-head .middle,
   .main-slider .slide.type2 .slide-text .offer-head .middle {
-    font-size: 34px;
+    font-size: 25px;
     line-height: 38px;
   }
   .main-slider .slide .slide-text .offer-head .bottom,
   .main-slider .slide.type2 .slide-text .offer-head .bottom {
-    font-size: 27px;
+    font-size: 20px;
     line-height: 30px;
   }
+
+  .main-slider .slide .slide-text .validity,
+  .main-slider .slide.type2 .slide-text .validity {
+    font-size: 20px;
+  }
+
   .main-slider .slide .slide-text {
     width: 100%;
   }

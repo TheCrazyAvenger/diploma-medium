@@ -70,12 +70,12 @@ const swipers = () => {
     setInterval(() => {
       if (currSlide === 4) {
         currSlide = 0;
-        slides[0].style.display = 'flex';
-        slides[4].style.display = 'none';
+        slides[4].style.opacity = '0';
+        slides[0].style.opacity = '1';
       } else {
         currSlide++;
-        slides[currSlide - 1].style.display = 'none';
-        slides[currSlide].style.display = 'flex';
+        slides[currSlide - 1].style.opacity = '0';
+        slides[currSlide].style.opacity = '1';
       }
     }, 5000);
   };

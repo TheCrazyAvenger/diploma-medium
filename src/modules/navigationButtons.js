@@ -1,3 +1,5 @@
+import { popUpListener } from './formValidation';
+
 const navigationButtons = () => {
   const topArrow = document.getElementById('totop'),
     menu = document.querySelector('.popup-menu'),
@@ -44,6 +46,14 @@ const navigationButtons = () => {
     if (target.closest('#totop')) {
       e.preventDefault();
       scrollAnim(target.closest('#totop'));
+    }
+    if (target.closest('#fgift')) {
+      const gift = document.getElementById(
+        `${target.closest('#fgift').id.substr(1)}`
+      );
+      gift.classList.add('visible');
+      gift.addEventListener('click', popUpListener);
+      target.closest('#fgift').style.display = 'none';
     }
   });
 };

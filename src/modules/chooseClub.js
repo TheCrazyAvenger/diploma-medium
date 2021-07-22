@@ -1,6 +1,5 @@
 const chooseClub = () => {
   const clubSelect = document.querySelector('.club-select'),
-    headMain = document.querySelector('.head-main'),
     clubVariants = clubSelect.querySelector('.club-variants');
 
   let animIterator,
@@ -17,10 +16,6 @@ const chooseClub = () => {
     }
   };
 
-  const toogleClass = () => {
-    clubVariants.classList.toggle('visible');
-  };
-
   document.addEventListener('click', (e) => {
     const target = e.target;
 
@@ -28,7 +23,7 @@ const chooseClub = () => {
       target.closest('.club-select') &&
       !target.matches('.club-variants, .club-item')
     ) {
-      toogleClass();
+      clubVariants.classList.toggle('visible');
       animation();
     } else if (target.closest('.club-variants') === null) {
       clubVariants.classList.remove('visible');
