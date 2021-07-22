@@ -5,6 +5,7 @@ import togglePopUp from './modules/togglePopUp';
 import sendForm from './modules/sendForm';
 import calc from './modules/calc';
 import navigationButtons from './modules/navigationButtons';
+import swipers from './modules/swipers';
 
 chooseClub();
 
@@ -15,3 +16,5 @@ sendForm();
 calc();
 
 navigationButtons();
+
+swipers();

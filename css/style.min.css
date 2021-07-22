@@ -714,6 +714,124 @@ html#schelkovo .advantages .wrapper {
   font-weight: 400;
   src: local('ALS Rubl'), url(../fonts/rouble.woff) format('woff');
 }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  min-height: 200px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.slide-gallery {
+  min-width: 300px;
+  max-width: 750px;
+  visibility: hidden;
+  height: auto;
+}
+
+.slide-gallery-active {
+  visibility: visible;
+}
+
+.slide-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 150px;
+}
+
+.swiper-slide .swiper-inner .swiper-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-content {
+  height: 120px;
+  margin-top: 20px;
+}
+
+.swiper-title {
+  color: #2e2e2e;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.gallery-bullet {
+  width: 100px !important;
+}
+
+.gallery-pagination {
+  bottom: 35px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 35px;
+  height: 5px;
+  border-radius: 5px;
+  opacity: 1;
+  background-color: white;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffd11a;
+}
+
+.swiper-text {
+  color: #616161;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.service-button {
+  background-color: #ffd11a;
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+}
+
+.service-button::after {
+  font-size: 20px;
+  color: #2e2e2e;
+  font-weight: 700;
+}
+
 .fixed-gift {
   position: fixed;
   z-index: 5555;
@@ -1341,102 +1459,12 @@ nav.popup-menu .close-menu-btn img {
   padding: 5px 5px 5px 18px;
   margin-right: 5px;
 }
-.services-slider {
-  display: flex;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.services-slider .slide {
-  text-align: center;
-  margin-right: 6px;
-  margin-left: 6px;
-  width: 210px;
-}
-.services-slider .slide img {
-  margin: 0 auto 19px;
-}
-.services-slider .slide h6 {
-  color: #2e2e2e;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.services-slider .slide p {
-  color: #616161;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 18px;
-  padding-left: 10px;
-  padding-right: 10px;
-  max-width: 200px;
-  margin: 0 auto;
-}
-.services-slider .slider-arrow {
-  position: absolute;
-  top: 75px;
-  margin-top: -18px;
-  z-index: 100;
-  cursor: pointer;
-}
-.services-slider .slider-arrow span {
-  display: block;
-  width: 36px;
-  height: 37px;
-  background-color: #f4c71b;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 11px;
-}
-.services-slider .slider-arrow.prev {
-  left: 2px;
-}
-.services-slider .slider-arrow.next {
-  right: 2px;
-}
+
 #gallery {
   background-color: #fff;
 }
 #gallery .gallery-bg {
   background: url(../images/gallery-bg.png) left center no-repeat;
-}
-#gallery .gallery-slider {
-  padding-left: 75px;
-  padding-right: 75px;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-#gallery .gallery-slider .slide {
-  margin: 0 auto !important;
-  width: 100%;
-}
-#gallery .gallery-slider .slider-arrow {
-  position: absolute;
-  top: 50%;
-  margin-top: -18px;
-  z-index: 100;
-  cursor: pointer;
-}
-#gallery .gallery-slider .slider-arrow span {
-  display: block;
-  width: 36px;
-  height: 37px;
-  background-color: #f4c71b;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 11px;
-}
-#gallery .gallery-slider .slider-arrow.prev {
-  left: 0;
-}
-#gallery .gallery-slider .slider-arrow.next {
-  right: 0;
-}
-#gallery .gallery-slider .slider-dots {
-  left: 50%;
-  margin-left: -65px;
-  bottom: 5%;
 }
 #cards {
   padding-bottom: 4rem;
