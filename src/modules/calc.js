@@ -13,6 +13,9 @@ const calc = () => {
     12: '24990',
   };
 
+  const PROMO_CODE = 'ТЕЛО2019',
+    discount = 0.7;
+
   const priceValues = document.querySelectorAll('input[name="card-type"]'),
     clubs = document.querySelectorAll('[data-club]'),
     form = document.getElementById('card_order'),
@@ -22,7 +25,7 @@ const calc = () => {
   const showPrice = (obj, month, discount) => {
     Object.keys(obj).map((price) => {
       if (month === price)
-        priceMessage.textContent = Math.floor(+obj[price] * discount);
+        priceMessage.textContent = Math.floor(Number(obj[price]) * discount);
     });
   };
 
@@ -50,8 +53,8 @@ const calc = () => {
       if (target.matches('[data-club]')) {
         checkPriceValues();
       }
-      if (promo.value === 'ТЕЛО2019') {
-        checkPriceValues(0.7);
+      if (promo.value === PROMO_CODE) {
+        checkPriceValues(discount);
       }
     });
   }

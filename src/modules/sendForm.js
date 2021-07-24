@@ -3,9 +3,11 @@ import {
   showStatusPanel,
   showStatus,
   clearForms,
-} from './formValidation';
+} from './uniteFuncs';
 
 const sendForm = () => {
+  const forms = document.querySelectorAll('[data-form]');
+
   const postData = (body) => {
     return fetch('../server.php', {
       method: 'POST',
@@ -42,22 +44,20 @@ const sendForm = () => {
       });
   };
 
-  document.addEventListener('submit', (e) => {
-    if (e.target.closest('form') !== null) {
+  forms.forEach((form) =>
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const formInputs = e.target.closest('form').querySelectorAll('input'),
-        checkbox = e.target
-          .closest('form')
-          .querySelector('input[type="checkbox"]');
+      const formInputs = form.querySelectorAll('input'),
+        checkbox = form.querySelector('input[type="checkbox"]');
       if (checkbox && checkbox.checked === false) {
         checkCheckBox(checkbox.nextSibling, 'red');
       } else {
         checkbox && checkCheckBox(checkbox.nextSibling, '');
-        getData(e.target.closest('form'));
+        getData(form);
         clearForms(formInputs);
       }
-    }
-  });
+    })
+  );
 };
 
 export default sendForm;

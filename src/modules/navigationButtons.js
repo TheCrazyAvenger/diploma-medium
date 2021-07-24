@@ -1,21 +1,18 @@
-import { popUpListener } from './formValidation';
+import { scrollAnim, animClubSelect } from './animations';
 
 const navigationButtons = () => {
   const topArrow = document.getElementById('totop'),
-    menu = document.querySelector('.popup-menu'),
-    topMenu = document.querySelector('.top-menu');
-
-  const scrollAnim = (item) => {
-    const blockID = item.getAttribute('href').substr(1);
-
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
+    topMenu = document.querySelector('.top-menu'),
+    header = document.querySelector('.header-main'),
+    toTop = document.getElementById('totop'),
+    clubSelect = document.querySelector('.club-select'),
+    clubVariants = clubSelect.querySelector('.club-variants');
 
   document.addEventListener('scroll', () => {
     const scroll = window.scrollY;
+
+    if (clubVariants.classList.contains('visible'))
+      clubVariants.classList.remove('visible');
 
     if (scroll > 300) {
       topMenu.style.position = 'fixed';
@@ -35,26 +32,27 @@ const navigationButtons = () => {
     }
   });
 
-  document.addEventListener('click', (e) => {
+  header.addEventListener('click', (e) => {
     const target = e.target;
 
     if (target.matches('[data-scroll]')) {
       e.preventDefault();
       scrollAnim(target);
-      menu.style.transform = 'translateX(100%)';
     }
-    if (target.closest('#totop')) {
-      e.preventDefault();
-      scrollAnim(target.closest('#totop'));
+    if (
+      target.closest('.club-select') &&
+      !target.matches('.club-variants, .club-item')
+    ) {
+      clubVariants.classList.toggle('visible');
+      animClubSelect();
+    } else if (target.closest('.club-variants') === null) {
+      clubVariants.classList.remove('visible');
     }
-    if (target.closest('#fgift')) {
-      const gift = document.getElementById(
-        `${target.closest('#fgift').id.substr(1)}`
-      );
-      gift.classList.add('visible');
-      gift.addEventListener('click', popUpListener);
-      target.closest('#fgift').style.display = 'none';
-    }
+  });
+
+  toTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollAnim(toTop);
   });
 };
 

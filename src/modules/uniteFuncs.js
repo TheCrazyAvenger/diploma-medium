@@ -1,18 +1,7 @@
+import { popUpListener } from './listeners';
+
 export const checkCheckBox = (elem, color) => {
   elem.style.color = color;
-};
-
-export const popUpListener = (e) => {
-  const target = e.target;
-
-  if (
-    target.matches('.close_icon, .close-btn') ||
-    !target.closest('.form-content')
-  ) {
-    const popUp = target.closest('.popup');
-    popUp.removeEventListener('click', popUpListener);
-    popUp.classList.toggle('visible');
-  }
 };
 
 export const showStatusPanel = (form) => {
@@ -26,10 +15,8 @@ export const showStatusPanel = (form) => {
 };
 
 export const showStatus = (title, text) => {
-  const thanksPopUp = document.getElementById('thanks'),
-    statusContent = thanksPopUp.childNodes[3].childNodes[3],
-    statusHeader = statusContent.childNodes[1],
-    statusMessage = statusContent.childNodes[3];
+  const statusHeader = document.querySelector('.form-title'),
+    statusMessage = document.querySelector('.form-text');
 
   statusHeader.textContent = title;
   statusMessage.innerHTML = text;
